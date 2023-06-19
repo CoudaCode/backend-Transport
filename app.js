@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const PORT = 4000;
+const PORT = 5000;
 const routes = require('./routes/Userroutes')
 const cookieParser = require("cookie-parser")
 const URI = "mongodb+srv://coudadm:AnwLUW7PoUGYU0vM@backendtransport.kxqmqsl.mongodb.net/?retryWrites=true&w=majority"
