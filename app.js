@@ -12,12 +12,21 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(
   cors({
-    origin: ["https://frontendtransport.onrender.com"],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 
+
+// mongoose.connect(`${URI}`).then(()=>{
+//   console.log('connecté a MongoDB')
+//   app.listen(PORT, ()=>{
+//     console.log(`bien connecté sur le port ${PORT}`);
+//   })
+// }).catch((error)=>{
+//   console.log(error);
+// })
 
 mongoose
   .connect(URI, {
