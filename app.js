@@ -40,7 +40,11 @@ app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-app.use(cookieParser());
 
+
+
+
+
+app.use(cookieParser());
 app.use('/user', routes)
 
