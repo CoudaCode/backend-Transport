@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const PORT = 4000;
-const routes = require('./routes/Userroutes')
+const userRoutes = require('./routes/Userroutes')
+const Reservation = require('./routes/ReservationRoutes')
 const cookieParser = require("cookie-parser")
 const URI = "mongodb+srv://coudadm:AnwLUW7PoUGYU0vM@backendtransport.kxqmqsl.mongodb.net/?retryWrites=true&w=majority"
 const app = express()
@@ -12,7 +13,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -42,9 +43,8 @@ app.listen(PORT, () => {
 
 
 
-
-
-
 app.use(cookieParser());
-app.use('/user', routes)
 
+app.use('/user', userRoutes)
+
+app.use('/Reservation', Reservation)

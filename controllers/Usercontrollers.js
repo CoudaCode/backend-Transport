@@ -11,7 +11,7 @@ class data {
          }
         const user = await Users.create({ email, password, name, createdAt, lastname, telephone });
         const token = createSecretToken(user._id);
-        res.cookie("token", token, {
+        res.cookie("token", token,{
           withCredentials: true,
           httpOnly: false,
         });
@@ -69,7 +69,7 @@ class data {
       } catch (error) {
         console.log(error.message)
         res.status(500).json({message: message.error})
-      } 
+      }
    }
    static async updateUser(req,res){
     try {
