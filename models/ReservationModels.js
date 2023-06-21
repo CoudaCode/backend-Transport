@@ -4,30 +4,38 @@ const modelsReservation = mongoose.Schema(
     {
     nom:{
       type: String,
-      required: [true, "Your nom is required"],
+      required: [true, "Champ nom est obligatoire"],
     },
     prenom: {
       type: String,
-      required: [true, "Your prenom is required"]
+      required: [true, "Champ prenom est obligatoire"]
     },
     email: {
       type: String,
-      required: [true, "Your email is required"],
+      required: [true, "Champ email est obligatoire"],
       unique : true
     },
     telephone: {
       type: Number,
-      required: [true, "Your number is required"]
+      required: [true, "Champ telephone est obligatoire"]
     },
     villeDepart: {
       type: String,
       enum: ["Abidjan", "Bouaké", "bouaflé", "Odienne"],
-      required: [true, "Your choisissez votre ville de depart"]
+      required: [true, "choisissez votre ville de depart"]
     },
     villeArrive: {
       type: String,
       enum: ["Abidjan", "Bouaké", "bouaflé", "Odienne"],
-      required: [true, "Your choisissez votre ville d'arrive"]
+      required: [true, "choisissez votre ville d'arrive"]
+    },
+    heureVoyage:{
+      type: String,
+      require: true
+    },
+    datVoyage:{
+      type:String,
+      require: true
     },
     createdAt: {
       type: Date,
