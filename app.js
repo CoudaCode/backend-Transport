@@ -3,13 +3,14 @@ const mongoose = require('mongoose')
 const PORT = 4000;
 const userRoutes = require('./routes/Userroutes')
 const Reservation = require('./routes/ReservationRoutes')
+const vehicule = require('./routes/VehiculeRoutes')
 const cookieParser = require("cookie-parser")
 const URI = "mongodb+srv://coudadm:AnwLUW7PoUGYU0vM@backendtransport.kxqmqsl.mongodb.net/?retryWrites=true&w=majority"
 const app = express()
 const cors = require('cors')
 
 
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(
   cors({
@@ -19,15 +20,6 @@ app.use(
   })
 );
 
-
-// mongoose.connect(`${URI}`).then(()=>{
-//   console.log('connecté a MongoDB')
-//   app.listen(PORT, ()=>{
-//     console.log(`bien connecté sur le port ${PORT}`);
-//   })
-// }).catch((error)=>{
-//   console.log(error);
-// })
 
 mongoose
   .connect(URI, {
@@ -45,6 +37,8 @@ app.listen(PORT, () => {
 
 app.use(cookieParser());
 
-app.use('/user', userRoutes)
 
+
+app.use('/user', userRoutes)
 app.use('/Reservation', Reservation)
+app.use('/vehicule', vehicule)
