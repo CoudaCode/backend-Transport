@@ -18,7 +18,7 @@ class data {
         createdAt,
         lastname,
         telephone,
-      });
+      }); 
       const token = createSecretToken(user._id);
       res.cookie("token", token, {
         withCredentials: true,
