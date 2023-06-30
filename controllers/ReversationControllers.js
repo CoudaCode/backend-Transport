@@ -8,7 +8,9 @@ class reservaTionData {
           if (existingUser || villeArrive == villeDepart){
             return res.json({ message: "email existe déjà ou la ville de depart est pareil que celle d'arrivé" });
          }
-         
+         if (email == "" || villeDepart == "" || villeArrive == "" || nom == "" || prenom == "" || datVoyage == "" || heureVoyage == "" || telephone == ""){
+          return res.json({ message: "un champ est vide" });
+       }
          const reserve = await Reservation.create({ email, villeDepart,villeArrive , nom, datVoyage,heureVoyage, createdAt, prenom , telephone });
          res
          .status(200)
