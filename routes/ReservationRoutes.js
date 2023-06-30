@@ -5,8 +5,8 @@ const Reversation = require("../controllers/ReversationControllers")
 //   res.setHeader("Access-Control-Allow-Origin", "*") 
 //    });
 
-router.get('/liste', Reversation.getReservation)
+router.get('/', Reversation.getReservation)
 router.get('/ville', Reversation.Destination)
-router.post('/addReservation', Reversation.createReservation)
+router.post('/', Reversation.createReservation)
 
 module.exports = router
