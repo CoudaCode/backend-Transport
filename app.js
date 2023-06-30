@@ -5,7 +5,7 @@ const userRoutes = require('./routes/Userroutes')
 const Reservation = require('./routes/ReservationRoutes')
 const vehicule = require('./routes/VehiculeRoutes')
 const cookieParser = require("cookie-parser")
-const URI = "mongodb+srv://coudadm:AnwLUW7PoUGYU0vM@backendtransport.kxqmqsl.mongodb.net/?retryWrites=true&w=majority"
+const URI = "mongodb+srv://coudadm:2Isr013PvGtn0qvj@backendtransport.kxqmqsl.mongodb.net/?retryWrites=true&w=majority"
 const app = express()
 const cors = require('cors')
 
